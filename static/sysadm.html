@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'>
+    <meta name="viewport" content="width=device-width">
+    <link href="./common/css/bootstrap.min.css" rel="stylesheet">
+    <link href="common/css/amaze2.css" rel="stylesheet">
+    <link href="common/css/index.css" rel="stylesheet">
+    <link href="./common/css/pop.css" rel="stylesheet">
+	<title>对账管理系统</title>
+</head>
+<body>
+
+<div class="wrapper">
+	 <!--侧边菜单s-->
+    <div class="sidebar" data-background-color="" data-active-color="danger">
+        <div class="logo">
+            <a href="./" class="simple-text">
+                对账管理系统
+            </a>
+        </div>
+       <!--  <div class="logo logo-mini"><a href="#" class="simple-text">C</a></div> -->
+        <div class="sidebar-wrapper">
+            <ul class="nav first-nav">
+                <li id="in_manage">
+                    <a data-toggle="collapse" href="#ui-inmanage" class="collapsed" aria-expanded="false">
+                        <i class="ti-addm"></i>
+                        <p>入款管理</p>
+                    </a>
+                    <div class="collapsebanks" id="ui-inmanage" role="navigation" aria-expanded="false" style="height: 0" >
+
+                    </div>
+                </li>
+                <li id="out_manage">
+                    <a data-toggle="collapse" href="#ui-chuk" class="collapsed" aria-expanded="false">
+                        <i class="ti-subm"></i>
+                        <p>出款管理 </p>
+                    </a>
+                    <div class="collapse" id="ui-chuk"  >
+
+                    </div>
+                </li>
+                <li>
+                    <a data-toggle="" href="addBank.html" class="collapsed" aria-expanded="false">
+                        <i class="ti-addbks"></i>
+                        <p>添加银行</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="" href="addAccount.html" class="collapsed  setckno" aria-expanded="false"><i class="ti-addusr"></i><p>添加账户</p></a>
+                </li>
+                <li>
+                    <a data-toggle="" href="check_accounts.html" class="collapsed  setckno" aria-expanded="false"><i class="ti-duiz"></i><p>对账</p></a>
+                </li>
+                <li>
+                    <a data-toggle=""  href="logInfo.html" class="collapsed  setckno" aria-expanded="false"><i class="ti-logs"></i><p>日志</p></a>
+                </li>
+                <li>
+                    <a data-toggle=""  href="addtype.html" class="collapsed  setckno" aria-expanded="false"><i class="ti-logs"></i><p>添加类型</p></a>
+                </li>
+                <li class="active" id="systom_manage">
+                    <a data-toggle="collapse" href="#sysadm" class="collapsed" aria-expanded="true"><i class="ti-syst"></i><p>系统管理</p></a>
+                    <div class="collapse in" id="sysadm" role="navigation" aria-expanded="true">
+                    <ul class="nav childnav">
+                    <li><a href="quxianadm.html">权限管理</a></li>
+                    <li><a href="roleadm.html">角色管理</a> </li>
+                    <li class="on"><a href="sysadm.html">管理员管理</a> </li>
+                    </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--侧边菜单end-->
+    <div class="main-panel">
+    	  <!--顶部导航-->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+            	 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand hidden-lg hidden-md" href="#"> 对账管理系统 </a>
+                </div>
+                <div class="navbar-minimize">
+                    <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
+                        <i class="ti-arrow-left"></i>
+                    </button>
+                </div>
+                <div class="navtimes">
+
+                </div>
+                <div class="collapse navbar-collapse">
+                    <div class="rtnav navbar-right">
+                        <p>您好！账户名：<P id="setusername"></P></p>
+                        <a href="javascript:;" id="logout_out">退出</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--顶部导航end-->
+
+    	<!--内容区s-->
+        <div class="content">
+            <div class="container-fluid">               
+            	<div class="admalls">
+                    <div class="admtip">管理员管理</div>
+                    <form class="form-inline symform">
+                            <div class="form-group">
+                                <label for="myusr">用户名：</label>
+                                <input type="text" class="" id="myusr"  placeholder="请输入用户名">
+                            </div>
+                            <div class="form-group">
+                                <label for="nicheng">昵称：</label>
+                                <input type="text" class="" id="nicheng"  placeholder="请输入昵称">
+                            </div>
+                            <div class="form-group">
+                                <label for="mypwd">密码：</label>
+                                <input type="text" class="" id="mypwd"  placeholder="请输入密码">
+                            </div>
+                            <div class="form-group">
+                                <label for="myrole">所属角色：</label>
+                                    <select class="selectpicker mySelect" id="adduserselect" multiple>
+                                </select>
+                            </div>
+                         <div class="form-group">
+                            <a href="javascript:;" class="btn_adadm" id="btn_adduser" style=" vertical-align: top;">添加管理员</a>
+                         </div>
+                        </form>
+                        <div class="tablecon">
+                            <table class="table table-exit" id="user_list">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>用户名</th>
+                                    <th>昵称</th>
+                                    <th>所属角色</th>
+                                    <th>所属权限</th>
+                                    <th>操作</th>
+                                </tr>
+                            </table>
+                            <div id="page">
+                            </div>
+                        </div>
+            	</div>
+            </div>
+        </div></div>
+    	<!--内容区end-->
+
+ </div>
+</div>
+<div id="tanout" class="tanout">
+   <form class="form-horizontal">
+      <div class="form-group">
+        <label  class="col-sm-4 control-label">用户名：</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control taninput" id="uu1" userid="" placeholder="用户名">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label  class="col-sm-4 control-label">昵称：</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control taninput"  id="nc1" placeholder="昵称">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label  class="col-sm-4 control-label">密码：</label>
+        <div class="col-sm-8">
+          <input type="text"  class="form-control taninput"  id="pwd1" placeholder="密码留空为不修改">
+        </div>
+      </div>
+
+      <div class="form-group">
+           <label for="myrole" class="col-sm-4 control-label">所属角色：</label>
+           <div class="col-sm-8">
+                <select class="selectpicker mySelect" id="tankuang" multiple="smsm">
+                </select>
+           </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-8">
+          <a class="btn btn_tan" id="mdfuser">修改</a>
+        </div>
+      </div>
+    </form>
+</div>
+<div id="pop" style=" display:none;">
+    <div id="popHead">
+        <a id="popClose" title="关闭">关闭</a>
+        <h2>温馨提示</h2>
+    </div>
+    <div id="popContent">
+        <dl><dt id="popTitle"><span style="color:red" id="yinhangka">tang0777</span></dt>
+            <dd id="popIntro"><span style="color:red" id="neirong">电子消消乐</span></dd>
+        </dl>
+    </div>
+</div>
+</body>
+</html>
+<!--   Core JS Files   -->
+<script src="common/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="common/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="common/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+<script src="common/js/amaze.js"></script>
+<script src="common/js/moment.min.js"></script>
+<script src="common/js/commonxiaoli.js"></script>
+<script src="common/js/select.js"></script>
+<script type="text/javascript" src="common/js/jquery.cookie.js"></script>
+<script src="common/js/jquery.select-bootstrap.js"></script>
+<script src="common/js/layer.js"></script>
+<script src="common/js/page-handle-tang.js"></script>
+<script src="common/js/useradmin-tang.js"></script>
+<script src="common/js/pop.js"></script>

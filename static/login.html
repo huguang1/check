@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="common/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="common/css/login.css">
+	<script type="text/javascript" src="common/js/jquery-3.1.1.min.js"></script>	
+	<script type="text/javascript" src="common/js/jquery.code.js"></script>
+    <link href="./common/css/pop.css" rel="stylesheet">
+	<title>login</title>
+</head>
+<body>
+	<div class="outlnbg" id="myBg">
+		<div class="logncon">
+			<div class="lfexp">
+				<p>欢迎来到 <img src="common/images/weln.png"></p>
+				<h2>对账管理系统</h2>
+			</div>		
+			<div class="rtlgcn">
+                <div class="form-group">
+                	<i class="allico"><img src="common/images/usrico.png"></i>
+                    <input type="text" name="username" id="username" class="form-control" placeholder="请输入您的用户名" maxlength="50" required>                    
+                </div>
+                <div class="form-group">
+                	<i class="allico"><img src="common/images/pwdico.png"></i>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="请输入您的密码" maxlength="20" required>                   
+                </div>
+                 <div class="form-group">
+                    <input type="text" class="form-control yan_txt" placeholder="请输入右侧验证码" maxlength="20" required>  
+                    <div class="chkcodeimg" ><img id="validate_pc" onclick="change_validate()"></div>
+                </div>
+				<div class="checkbox">
+				    <label>
+				      <input type="checkbox" id="remember_num">记住用户名
+				    </label>
+				  </div>
+                <div class="form-group">
+                    <button type="button" class="btn  btn-log">登 &nbsp;&nbsp;&nbsp;录</button>
+                </div>
+
+
+                <div class="tlip">用户名或密码错误，请重新输入！</div>
+               
+			</div>
+		</div>
+	</div>
+<div id="pop" style=" display:none;">
+    <div id="popHead">
+        <a id="popClose" title="关闭">关闭</a>
+        <h2>温馨提示</h2>
+    </div>
+    <div id="popContent">
+        <dl><dt id="popTitle"><span style="color:red" id="yinhangka">tang0777</span></dt>
+            <dd id="popIntro"><span style="color:red" id="neirong">电子消消乐</span></dd>
+        </dl>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+function getClientHeight()
+{
+  var clientHeight=0;
+  if(document.body.clientHeight&&document.documentElement.clientHeight)
+  {
+  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+  }
+  else
+  {
+  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+  }
+  return clientHeight;
+}
+$(function(){
+	 window.addEventListener("resize",getClientHeight);
+	  var oHeight = document.documentElement.clientHeight || document.body.clientHeight;
+	  var oB = document.getElementById('myBg');
+	  oB.style.height = getClientHeight() + 'px';
+});
+
+</script>
+<script src="common/js/loginxiaoli.js"></script>
+<script src="common/js/pop.js"></script>
